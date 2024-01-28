@@ -34,6 +34,12 @@ public class ClientBehaviour : MonoBehaviour
             port = ushort.Parse(portString);
         }
 
+        var endpoint = NetworkEndpoint.LoopbackIpv4.WithPort(port);
+        if (LaunchArgUtility.TryGetArg("-ip", out var ipString))
+        {
+            endpoint = NetworkEndpoint.Parse(ipString, port).WithPort(port);
+        }
+
         _clients = new(connectionsCount, Allocator.Persistent);
         for (var i = 0; i < connectionsCount; i++)
         {
@@ -42,7 +48,7 @@ public class ClientBehaviour : MonoBehaviour
             var connectionHandle = new ConnectionHandle
             {
                 driver = driver,
-                connection = driver.Connect(NetworkEndpoint.LoopbackIpv4.WithPort(port))
+                connection = driver.Connect(endpoint)
             };
             _clients.Add(connectionHandle);
         }
