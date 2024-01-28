@@ -39,7 +39,8 @@ public class ServerBehaviour : MonoBehaviour
             secure.ApplyServer(ref settings);
         }
 
-        settings.WithNetworkConfigParameters(receiveQueueCapacity, sendQueueCapacity);
+        settings.WithNetworkConfigParameters(receiveQueueCapacity: receiveQueueCapacity,
+            sendQueueCapacity: sendQueueCapacity);
         _driver = NetworkDriver.Create(settings);
 
 
