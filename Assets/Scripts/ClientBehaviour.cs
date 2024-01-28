@@ -32,7 +32,21 @@ public class ClientBehaviour : MonoBehaviour
             secure.ApplyClient(ref settings);
         }
 
-        settings.WithNetworkConfigParameters(receiveQueueCapacity: 16, sendQueueCapacity: 16);
+        var receiveQueueCapacity = 16;
+        var sendQueueCapacity = 16;
+
+        if (LaunchArgUtility.TryGetArg("-clientReceiveCapacity", out capString))
+        {
+            receiveQueueCapacity = int.Parse(capString);
+        }
+
+        if (LaunchArgUtility.TryGetArg("-clientSendCapacity", out capString))
+        {
+            sendQueueCapacity = int.Parse(capString);
+        }
+
+        settings.WithNetworkConfigParameters(receiveQueueCapacity: receiveQueueCapacity,
+            sendQueueCapacity: sendQueueCapacity);
 
         ushort port = 9000;
         if (LaunchArgUtility.TryGetArg("-port", out var portString))
