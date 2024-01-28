@@ -26,6 +26,12 @@ public class ClientBehaviour : MonoBehaviour
         }
 
         var settings = new NetworkSettings(Allocator.Temp);
+
+        if (TryGetComponent(out SecureConnectionBehaviour secure))
+        {
+            secure.ApplyClient(ref settings);
+        }
+
         settings.WithNetworkConfigParameters(receiveQueueCapacity: 3, sendQueueCapacity: 3);
 
         ushort port = 9000;

@@ -33,6 +33,12 @@ public class ServerBehaviour : MonoBehaviour
 
 
         var settings = new NetworkSettings(Allocator.Temp);
+
+        if (TryGetComponent(out SecureConnectionBehaviour secure))
+        {
+            secure.ApplyServer(ref settings);
+        }
+
         settings.WithNetworkConfigParameters(receiveQueueCapacity, sendQueueCapacity);
         _driver = NetworkDriver.Create(settings);
 

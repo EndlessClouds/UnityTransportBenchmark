@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 2112249745}
   - component: {fileID: 2112249744}
   - component: {fileID: 2112249746}
+  - component: {fileID: 2112249747}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -182,6 +183,165 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectionsCount: 15000
   randomDataSendInterval: 3
+--- !u!114 &2112249747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112249743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555ca9bc1bce405d9f096ab98b7adb71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clientCa: '-----BEGIN CERTIFICATE-----
+
+    MIIDnzCCAoegAwIBAgIUK+OQC+rObFEBVaWzWgSyMMzZ5DowDQYJKoZIhvcNAQEL
+
+    BQAwXzESMBAGA1UEBwwJU2luZ2Fwb3JlMRswGQYDVQQKDBJFbmRsZXNzIENsb3Vk
+
+    cyBMdGQxGzAZBgNVBAsMElRyYW5zcG9ydEJlbmNobWFyazEPMA0GA1UEAwwGQ2xp
+
+    ZW50MB4XDTI0MDEyODEyNTUwMVoXDTI3MDEyNzEyNTUwMVowXzESMBAGA1UEBwwJ
+
+    U2luZ2Fwb3JlMRswGQYDVQQKDBJFbmRsZXNzIENsb3VkcyBMdGQxGzAZBgNVBAsM
+
+    ElRyYW5zcG9ydEJlbmNobWFyazEPMA0GA1UEAwwGQ2xpZW50MIIBIjANBgkqhkiG
+
+    9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5aAX+8DP0VdwxNdFa03XTgTV7FAp4oLCADcU
+
+    WlKXbKO9z4MEfe7yIrwhRke4eZbBAhohPk/jHNFXdYvA/bX/hewJGhQ1Mvw73zfq
+
+    iG2OPsQVuUGgei4IfQDOqMw0okW6R0kQHPrvMiy0LU/vTCFDuAU+zGuNJrigunNz
+
+    /48AvZQG4/Fc0VhQsvne4WAysc6Yl6fKYLA7QIckoaGou2jBIlqsiaiPrkrV5OLN
+
+    JVjqdsQsHv3Y1YWai2ZfcCE5NcrFmVM1FrbJogINr5qqX1GcnW9CnZPtGUN8vp7R
+
+    ebnWDtu7z1qzixwUzlmyDmf6NRyWsK2Y9wPFUggrtwxqfslzhQIDAQABo1MwUTAd
+
+    BgNVHQ4EFgQU05nI5UYFQ0jfYuex571HNdGIDqIwHwYDVR0jBBgwFoAU05nI5UYF
+
+    Q0jfYuex571HNdGIDqIwDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOC
+
+    AQEAfoEtZwF86lvV7K625sthwJ5NNAzEVd1iqkREhsvDf+HM+u7Ms8PX0J6O3Uyx
+
+    dW4CIWqm0qquYE5fV5TTiWcua32VJZdvuUrJuv9TfW2qyPIVyaHfDN3MmuSGxctr
+
+    uU+sbIGJmqlwemWdNkxBgERameOfjZN3ICPWtelkc/MvW0OfUJWod6Q8dXD6kf+p
+
+    95TQg/IjQJ+Zq16svXohlny6N+ssINdnYGNkPwzEYPx/vAPalqcQq+/SfFv5K80U
+
+    aguiyGQUHfrljMRmRIV0VuE1l6Ft0xEtFCcQqQXuKQmcMRs76chND9ylugog3Ozx
+
+    NPcVdmaSX2V34wE3CKak3uCVjA==
+
+    -----END
+    CERTIFICATE-----
+
+'
+  serverCommonName: Server
+  serverCert: '-----BEGIN CERTIFICATE-----
+
+    MIIDRTCCAi0CFHGaqnatdZt5qs/xEt6+j+Gb5rHeMA0GCSqGSIb3DQEBCwUAMF8x
+
+    EjAQBgNVBAcMCVNpbmdhcG9yZTEbMBkGA1UECgwSRW5kbGVzcyBDbG91ZHMgTHRk
+
+    MRswGQYDVQQLDBJUcmFuc3BvcnRCZW5jaG1hcmsxDzANBgNVBAMMBkNsaWVudDAe
+
+    Fw0yNDAxMjgxMjU1MDFaFw0yNTAxMjcxMjU1MDFaMF8xEjAQBgNVBAcMCVNpbmdh
+
+    cG9yZTEbMBkGA1UECgwSRW5kbGVzcyBDbG91ZHMgTHRkMRswGQYDVQQLDBJUcmFu
+
+    c3BvcnRCZW5jaG1hcmsxDzANBgNVBAMMBlNlcnZlcjCCASIwDQYJKoZIhvcNAQEB
+
+    BQADggEPADCCAQoCggEBAJMOB9NOVZGRwtl3m6fszFY2jQoLWwmOjL9ZH7mO7vVx
+
+    tELEQYx2c9jgsexLs7XM60CA+ZRtz+76/vj6adhQYfKA0ZocEi8W/KemW2COUPnG
+
+    xpwR8mULFjCeiINK4J4s9oamyEImCnDQ9Lzks8c9Zq7k4QiuC2s4Oi0BMT2QJtny
+
+    s8W2cktc7OLDTsQ5MGQ4J85iI/diIc/z/rOSRybKWhzwFLrk441GJ97YnS2BeZaD
+
+    dup+g8hHIwbwvJzND9uUMmrwHRq8+giqZWQC6VVV4Y8mhyIK6Fv0Ow4RB0QNwL7j
+
+    P2frqS3LO9MksTHjN0vyeccIDj/znpXTWA9CYYEVrSkCAwEAATANBgkqhkiG9w0B
+
+    AQsFAAOCAQEATHsuqAYcdbqVU2SL+8PJWa4O8vSfJkoaLVgBTWsggDVja37j0B7r
+
+    q+AhRTpDrK4B28YOe+Cuh7wMbE6O4BOJAntXuDPb5+6uzy9XQ0t4erZ0k5TxL/bX
+
+    T6sQfKCmO3H56h06R4gpvL1bib9/fKIQg6CAvx8uL+xabn22xp+OuBY0BPTFQV2S
+
+    Tc8VH/xz8ETniXjZFWUAcZffxRW/6vMl+8P7WPZcc1VdSiBI7/8pikqVdMuLDKYm
+
+    2wI/Md24cGUTTHXjYF3/9JK8kfw7SaTG1tKXTCvZ68qm43jBmivKEv8okny7DjIv
+
+    XtWjFgOlOArwmfaeB/QYEx5G7UHucTtxMQ==
+
+    -----END
+    CERTIFICATE-----
+
+'
+  serverPrivate: '-----BEGIN PRIVATE KEY-----
+
+    MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCTDgfTTlWRkcLZ
+
+    d5un7MxWNo0KC1sJjoy/WR+5ju71cbRCxEGMdnPY4LHsS7O1zOtAgPmUbc/u+v74
+
+    +mnYUGHygNGaHBIvFvynpltgjlD5xsacEfJlCxYwnoiDSuCeLPaGpshCJgpw0PS8
+
+    5LPHPWau5OEIrgtrODotATE9kCbZ8rPFtnJLXOziw07EOTBkOCfOYiP3YiHP8/6z
+
+    kkcmyloc8BS65OONRife2J0tgXmWg3bqfoPIRyMG8LyczQ/blDJq8B0avPoIqmVk
+
+    AulVVeGPJociCuhb9DsOEQdEDcC+4z9n66ktyzvTJLEx4zdL8nnHCA4/856V01gP
+
+    QmGBFa0pAgMBAAECggEALkk4RVZesJcEkZaIM+7g0jIRapvwZ62qt3/B8JIAvNix
+
+    OGK1jxSpmhX/arTZN9vsID14UTPPQxVVs+B9+Ew0yDOrxaoYPyIpHEvMbzPcYQIj
+
+    +XPcq9k1ftAnf8vNr3vPjMpqNgfrOV9L6TjDLW8yJtJ70lOV3IWyKgA6E3qQAAFe
+
+    SGXaPR7SnX5XH+QAvla6xo8A8JQq2XNffIRrLIq5ZtsBuySkZLTn9UtSriyZk5C+
+
+    PitxdT04vGaZ/3Dt1x/FH8SfiNE3ae/0r4b4/hQU/i0Ip5XDvBAapFWQk9q0dMVh
+
+    88gIKPJTPtuuelzQfBYm955KbOYaJPXjBGOOpz4GUQKBgQDIOeoHPN7l9Unk0nLJ
+
+    a1fIIhqx5/Co2xrjW8MsTb2xtVbPeGM6B4oBhsEvlBm8JYNzUJe4crFwFlYDAHr6
+
+    4PlCAr9nqR7zHtqVjbXkODLWK0g/VV/WuaI0BY84LochUX5/2ya84o3PDJFXhUFF
+
+    G2ffOaZT7vgKNaGiC/N9jALTWwKBgQC8BHmIwTzAiEsj+OJxEeb2UXaPs4sk5MlP
+
+    K3sEMxM8alLr7bCUNaXA2Z1PmOrx6QD8BQGnoj9MdczVPEcx0eEg9j3sCAVgk3Gc
+
+    Hglm8ZaSPMaETfQmNmb9/jqP+PEACSUfvX4JOP2iLMzeMO9zS5ziKaMHxEr3xOp5
+
+    3n32Vuh8ywKBgQCENlHFg7k/qY+orBolzF7DhVmRPjGYnk2L8czX1WG8FZ0EFF+Z
+
+    Mt87EMtB6o5vwWmiXIZCwmFOPUGAa/HI9YNBxmSzQ2ZvbWEyvcdssntHFn93ap2F
+
+    QUDNDxq6I2cRZimcrY5PzV2MaaUTYKdvxZ/6M6wT4kkhHLblNPUMYsZ+3wKBgQCM
+
+    vcTEK/JwJRYqTUokXcRIKl7X3wyPh3tx+hhR4nHJzcVYukpuB2KWY8+wH8XvY/3K
+
+    qWy9sWQ0thGopUCd+H/PjsR3hOGRk4190bY0CzAtM7VeoIPcfujFxKLN1wmAf1f8
+
+    1HoeKT0jQunwgS0dX0KGwag6TiPYKN1kcLpVxmSt1QKBgBTiPjfYGbMkODsxSfP4
+
+    8m72SgV1K/C1h1SgmAG7GqTuDxv+3IDaHJQGUtA39FvnJIwhYFflVkFMVbwnl0fN
+
+    eiQjbr/xG7DUpdWKDDZzChS3YqYAWOLjBkI5OKalFNqNNgKAEtwDVj/xPWSyxF11
+
+    cMDnLy37o+ztpkJuNyhdrACq
+
+    -----END
+    PRIVATE KEY-----
+
+'
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
