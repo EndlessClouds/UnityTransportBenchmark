@@ -32,7 +32,7 @@ public class ClientBehaviour : MonoBehaviour
             secure.ApplyClient(ref settings);
         }
 
-        settings.WithNetworkConfigParameters(receiveQueueCapacity: 3, sendQueueCapacity: 3);
+        settings.WithNetworkConfigParameters(receiveQueueCapacity: 16, sendQueueCapacity: 16);
 
         ushort port = 9000;
         if (LaunchArgUtility.TryGetArg("-port", out var portString))
@@ -126,30 +126,28 @@ public class ClientBehaviour : MonoBehaviour
         public void Execute()
         {
             var driver = handle.driver;
-            if (driver.GetConnectionState(handle.connection) is not NetworkConnection.State.Connected)
-            {
-                return;
-            }
-
             NetworkEvent.Type state;
             while ((state = handle.driver.PopEvent(out _, out _)) != NetworkEvent.Type.Empty) { }
 
-            if ((currentTick + index) % interval == 0)
+            if (driver.GetConnectionState(handle.connection) is NetworkConnection.State.Connected)
             {
-                var bytes = handle.driver.BeginSend(handle.connection, out var writer);
-                if (bytes < 0)
+                if ((currentTick + index) % interval == 0)
                 {
-                    var statusCode = (StatusCode)bytes;
-                    Debug.LogError($"Couldn't send packet on client: {statusCode}");
-                    return;
+                    var bytes = handle.driver.BeginSend(handle.connection, out var writer);
+                    if (bytes < 0)
+                    {
+                        var statusCode = (StatusCode)bytes;
+                        Debug.LogError($"Couldn't send packet on client: {statusCode}");
+                        return;
+                    }
+
+                    writer.WriteInt(123);
+                    writer.WriteInt(63464);
+                    writer.WriteInt(12412);
+                    writer.WriteInt(56756);
+
+                    handle.driver.EndSend(writer);
                 }
-
-                writer.WriteInt(123);
-                writer.WriteInt(63464);
-                writer.WriteInt(12412);
-                writer.WriteInt(56756);
-
-                handle.driver.EndSend(writer);
             }
         }
     }
